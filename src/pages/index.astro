@@ -1,11 +1,98 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Projects from "../components/Projects.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+import BriefcaseIcon from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Portfolio de Emmanuel - Programador Backend y Frontend"
+  description="Contrata a Emmanuel para crear tu Backend o Frontend"
+>
+  <main class="px-4">
+    <SectionContainer class="pt-44 pb-24">
+      <!-- class="rounded-full w-12 h-12 mb-2" -->
+      <img
+        class="rounded-full size-12 mb-2"
+        src="/images/photo.webp"
+        alt="Treizer photo"
+      />
+
+      <h1
+        class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Ey, soy Emmanuel
+        <a
+          href="https://www.linkedin.com/in/emmanuelalejandromartinezrodriguez"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar </Badge>
+        </a>
+      </h1>
+
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+        <span>
+          Egresado del Centro Universitario de Ciencias Exactas e Ingenierias.
+        </span>
+        <span class="text-yellow-200/90">Desarrollador Backend y Frontend</span
+        >.
+        <span class="text-green-200/90">De Guadalajara, Jalisco, Mexico</span>.
+        <span class="opacity-75">
+          Cero experiencia laboral, pero con la capacidad de utilizar todo lo
+          aprendido</span
+        >.
+        <!-- <span class="opacity-75">
+          Cero experiencia laboral, pero con el conocimiento suficiente para
+          utilizar todo lo aprendido
+        </span>. -->
+      </h2>
+
+      <nav class="flex gap-4 mt-4 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/emmanuelalejandromartinezrodriguez"
+        >
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Treizzer">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:zescorpion.73@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          zescorpion.73@gmail.com
+        </SocialPill>
+
+        <!-- <a
+            href="https://www.linkedin.com/in/emmanuelalejandromartinezrodriguez"
+          ></a> -->
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
 </Layout>
